@@ -3,17 +3,20 @@ const { GroceryModel } = require("../models");
 const router = Express.Router();
 
 
-//SHANNON
+
+//SHANNONS ENDPOINTS
+//hey sorry I had put these in here to test the db connection per the modules before deciding to switch to user endpoints
+
 router.get('/list', (req, res) => {
-    res.send("test get lists")
+    res.send("test connect get lists")
 });
 
 router.post('/create', (req, res) => {
-    res.send("test to create grocery list")
+    res.send("test connect create grocery list")
 });
 
 //RYANS ENDPOINTS 
-//UPDATE /PUT 
+//PUT 
 //DELETE 
 
 module.exports = router; 
