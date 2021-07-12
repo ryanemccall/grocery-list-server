@@ -8,8 +8,9 @@ const controllers = require("./controllers");
 app.use(Express.json());
 
 //setting up base URLS
-app.use('/grocery', controllers.groceryController);
 app.use('/user', controllers.userController);
+
+app.use('/grocery', controllers.groceryController);
 
 //this is structured as a promise bc sequelize is a promise based lan that communicates with database
 dbConnect.authenticate()
