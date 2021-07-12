@@ -11,7 +11,12 @@ const Grocery = db.define("grocery", {
     quantity: {
         type: DataTypes.INTEGER,
         allowNull: false
-    },
+    }
+    //stretch goal
+    // comment: {
+    //     type: DataTypes.STRING(200),
+    //     allowNull: true
+    // }
 });
 
 module.exports = Grocery;
