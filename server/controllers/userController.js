@@ -63,12 +63,12 @@ router.post('/login', async (req, res) => {
                 });
             } else {
                 res.status(401).json({
-                    message: "Login failed - incorrect email or password"
+                    message: "Login failed - incorrect email or password."
                 })
             }
             } else {
             res.status(401).json({
-                message: "Login failed - incorrect email or password"
+                message: "Login failed - incorrect email or password."
             });
             }
     } catch (error) {
