@@ -13,8 +13,10 @@ const Grocery = db.define("grocery", {
         allowNull: false
     },
     //RYAN---adding owner to the grocery database so a USER can pick a certain list to update in the database and avoid changing someone elses
-    owner: {
-        type: DataTypes.INTEGER
+    owner_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+
     }
     //stretch goal
     // comment: {
