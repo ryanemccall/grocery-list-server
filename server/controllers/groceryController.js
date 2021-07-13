@@ -1,6 +1,5 @@
 const Express = require("express");
 const { GroceryModel, UserModel } = require("../models");
-// const grocery = require("../models/grocery");
 const router = Express.Router();
 //place validation requirement below user so they aren't locked out
 let validateSession = require("../middleware/validateSession");
@@ -61,7 +60,7 @@ router.put("/update/:id", validateSession, async (req, res) => {
         //This is to find the List that corresponds with the User
         where: {
             id: req.params.id,
-            owner: req.user.id,
+            owner_id: req.user.id,
         },
 
     };
@@ -75,7 +74,7 @@ router.put("/update/:id", validateSession, async (req, res) => {
         const update = await Grocery.update(updateGroceryList, query);
         res.status(200).json({
             message: "Grocery list has been successfully updated!",
-            update,
+            
         });
     } catch (err) {
         res.status(500).json({
@@ -93,7 +92,7 @@ router.delete("/delete/:id", validateSession, async (req, res) => {
         const query = {
             where: {
                 id: listId,
-                owner: owner
+                owner_id: owner
             },
         };
 
