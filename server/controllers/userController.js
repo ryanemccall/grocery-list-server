@@ -26,7 +26,7 @@ router.post('/signup', async (req, res) => {
     } catch (err) {
         if (err instanceof UniqueConstraintError) {
             res.status(409).json({
-                message: "Be more unique. Email already in use",
+                message: "Be more unique - email already in use. Or maybe you've signed up before - try logging in.",
             });
         } else {
             res.status(500).json({
@@ -58,17 +58,17 @@ router.post('/login', async (req, res) => {
                 
                 res.status(200).json({
                     user: loggedInUser,
-                    message: "Presto. You're logged in.",
+                    message: "Presto.  You're in.",
                     sessionToken: token
                 });
             } else {
                 res.status(401).json({
-                    message: "Fail. Icorrect email or password."
+                    message: "Fail.  Incorrect email or password."
                 })
             }
             } else {
             res.status(401).json({
-                message: "Fail. Incorrect email or password."
+                message: "Fail.  Incorrect email or password."
             });
             }
     } catch (error) {
