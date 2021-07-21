@@ -6,7 +6,6 @@ const Grocery = db.define("grocery", {
     ingredient: {
         type: DataTypes.STRING(100),
         allowNull: false,
-        unique: true,
     },
     quantity: {
         type: DataTypes.INTEGER,
