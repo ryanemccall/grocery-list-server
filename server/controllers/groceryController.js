@@ -43,7 +43,7 @@ router.post('/', validateSession, async (req, res) => {
         quantity,
         owner_id: id
     }
-    console.log(`OWNER ID: ${id}`);
+    console.log(`OWNER ID from CREATE LIST: ${id}`);
     try {
         const newListEntry = await GroceryModel.create(listEntry);
         res.status(200).json(newListEntry);
