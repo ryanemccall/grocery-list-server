@@ -6,7 +6,6 @@ const Grocery = db.define("grocery", {
     ingredient: {
         type: DataTypes.STRING(100),
         allowNull: false,
-        unique: true,
     },
     quantity: {
         type: DataTypes.INTEGER,
@@ -16,7 +15,6 @@ const Grocery = db.define("grocery", {
     owner_id: {
         type: DataTypes.INTEGER,
         allowNull: false
-
     }
     //stretch goal
     // comment: {
