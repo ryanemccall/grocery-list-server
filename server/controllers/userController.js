@@ -19,18 +19,18 @@ router.post('/signup', async (req, res) => {
         let token = jwt.sign({ id: User.id }, process.env.JWT_SECRET, { expiresIn: '14d' });
         
         res.status(201).json({
-            message: "Bravo! User successfully signed up.",
+            message: "Molto bene. Let's get cookin good lookin.",
             user: User,
             sessionToken: token
         });
     } catch (err) {
         if (err instanceof UniqueConstraintError) {
             res.status(409).json({
-                message: "Be more unique. Email already in use",
+                message: "Be more unique - email already in use. Or maybe you've signed up before - try logging in.",
             });
         } else {
             res.status(500).json({
-                message: "Bummer. Failed to register user",
+                message: "Bummer. Failed to sign up potential top chef",
             });
         }
     }
@@ -58,22 +58,22 @@ router.post('/login', async (req, res) => {
                 
                 res.status(200).json({
                     user: loggedInUser,
-                    message: "You're logged in.  Bon Apettit.",
+                    message: "Presto.  You're in.",
                     sessionToken: token
                 });
             } else {
                 res.status(401).json({
-                    message: "Login failed - incorrect email or password."
+                    message: "Fail.  Incorrect email or password."
                 })
             }
             } else {
             res.status(401).json({
-                message: "Login failed - incorrect email or password."
+                message: "Fail.  Incorrect email or password."
             });
             }
     } catch (error) {
         res.status(500).json({
-            message: "Oh no - we couldn't log you in."
+            message: "Too hot in the kitchen - sorry, we couldn't log you in."
         })
     }
 });
