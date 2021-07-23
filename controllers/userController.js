@@ -16,7 +16,7 @@ router.post('/signup', async (req, res) => {
             password: bcrypt.hashSync(password, 15),
         });
         
-        let token = jwt.sign({ id: User.id }, process.env.JWT_SECRET, { expiresIn: '14d' });
+        let token = jwt.sign({ id: User.id }, process.env.JWT_SECRET, { expiresIn: 60 * 60 * 12 });
         
         res.status(201).json({
             message: "Molto bene. Let's get cookin good lookin.",
@@ -54,7 +54,7 @@ router.post('/login', async (req, res) => {
             let passwordComparison = await bcrypt.compare(password, loggedInUser.password);
             
             if (passwordComparison) {
-                let token = jwt.sign({ id: loggedInUser.id }, process.env.JWT_SECRET, { expiresIn: '14d' });
+                let token = jwt.sign({ id: loggedInUser.id }, process.env.JWT_SECRET, { expiresIn: 60 * 60 * 12 });
                 
                 res.status(200).json({
                     user: loggedInUser,

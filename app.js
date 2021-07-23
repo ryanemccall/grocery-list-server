@@ -19,8 +19,8 @@ app.use('/grocery', controllers.groceryController);
 dbConnect.authenticate()
     .then(() => dbConnect.sync())
     .then(() => {
-        app.listen(3000, () => {
-            console.log(`[Server]: App is listening on port 3000.`);
+        app.listen(process.env.PORT, () => {
+            console.log(`[Server]: App is listening on port ${process.env.PORT}`);
         });
     })
     .catch((err) => {
