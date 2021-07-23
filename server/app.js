@@ -2,13 +2,9 @@ require("dotenv").config();
 const Express = require("express");
 const app = Express();
 const dbConnect = require('./db');
-<<<<<<< HEAD
+
 app.use(require("./middleware/headers"))
-=======
 
-app.use(require('./middleware/headers'));
-
->>>>>>> 502e110b230402056bf2ec2b32946f1805f2cd44
 const controllers = require("./controllers");
 
 //this must go above any route statements bc all res must be jsonified 
