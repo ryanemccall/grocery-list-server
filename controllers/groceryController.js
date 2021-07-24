@@ -1,11 +1,10 @@
 const Express = require("express");
-const { GroceryModel } = require("../models");
 //removed UserModel from import above
 const router = Express.Router();
 //place validation requirement below user so they aren't locked out
 let validateSession = require("../middleware/validateSession");
-const Grocery = require("../models/grocery");
-
+// const Grocery = require("../models/grocery");
+const { GroceryModel, UserModel } = require("../models");
 
 //SHANNONS ENDPOINTS
 //hey sorry I had put these in here to test the db connection per the modules before deciding to switch to user endpoints

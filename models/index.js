@@ -1,4 +1,4 @@
-const UserModel = require("./user");
-const GroceryModel = require("./grocery");
+const UserModel = require("./User");
+const GroceryModel = require("./Grocery");
 
 module.exports = { UserModel, GroceryModel};
