@@ -1,5 +1,6 @@
 const Express = require("express");
-const { GroceryModel, UserModel } = require("../models");
+const { GroceryModel } = require("../models");
+//removed UserModel from import above
 const router = Express.Router();
 //place validation requirement below user so they aren't locked out
 let validateSession = require("../middleware/validateSession");
