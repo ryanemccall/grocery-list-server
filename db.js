@@ -7,7 +7,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
     ssl: process.env.ENVIRONMENT === 'production'
 });
 
-//Em J connection 
+// // Em J connection 
 // const sequelize = new Sequelize("postgres://postgre:postgre@localhost:5432/grocery-list-db");
 
 //Shannon connection 
