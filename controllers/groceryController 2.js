@@ -1,10 +1,10 @@
 const Express = require("express");
-//removed UserModel from import above
+const { GroceryModel, UserModel } = require("../models");
 const router = Express.Router();
 //place validation requirement below user so they aren't locked out
 let validateSession = require("../middleware/validateSession");
-// const Grocery = require("../models/grocery");
-const { GroceryModel, UserModel } = require("../models");
+const Grocery = require("../models/grocery");
+
 
 //SHANNONS ENDPOINTS
 //hey sorry I had put these in here to test the db connection per the modules before deciding to switch to user endpoints
@@ -71,7 +71,7 @@ router.put("/update/:id", validateSession, async (req, res) => {
     };
 
     try {
-        const update = await GroceryModel.update(updateGroceryList, query);
+        const update = await Grocery.update(updateGroceryList, query);
         res.status(200).json({
             message: "Grocery list has been successfully updated!",
             
@@ -96,7 +96,7 @@ router.delete("/delete/:id", validateSession, async (req, res) => {
             },
         };
 
-        await GroceryModel.destroy(query);
+        await Grocery.destroy(query);
         res.status(200).json({ message: "Your grocery list has been removed"})
     } catch(err) {
         res.status(500).json(`There was an error in deleting that list ${err}`)
