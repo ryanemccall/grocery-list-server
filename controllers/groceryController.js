@@ -71,7 +71,7 @@ router.put("/update/:id", validateSession, async (req, res) => {
     };
 
     try {
-        const update = await Grocery.update(updateGroceryList, query);
+        const update = await GroceryModel.update(updateGroceryList, query);
         res.status(200).json({
             message: "Grocery list has been successfully updated!",
             
@@ -96,7 +96,7 @@ router.delete("/delete/:id", validateSession, async (req, res) => {
             },
         };
 
-        await Grocery.destroy(query);
+        await GroceryModel.destroy(query);
         res.status(200).json({ message: "Your grocery list has been removed"})
     } catch(err) {
         res.status(500).json(`There was an error in deleting that list ${err}`)
