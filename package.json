@@ -1,0 +1,30 @@
+{
+    "name": "blue-badge-project-server",
+    "version": "1.0.0",
+    "description": "grocery-list-app server side",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js",
+        "dev": "nodemon"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ryanemccall/grocery-list-server.git"
+    },
+    "author": "avengers",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ryanemccall/grocery-list-server/issues"
+    },
+    "homepage": "https://github.com/ryanemccall/grocery-list-server#readme",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "pg": "^8.6.0",
+        "pg-hstore": "^2.3.4",
+        "sequelize": "^6.6.5"
+    }
+}
